@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private new SpriteRenderer renderer;
     private Vector2 inputDir;
     private bool isGround;
-    private bool isHited;
+    //private bool isHited;
 
     private Coroutine moveRoutine;
 
@@ -52,8 +52,8 @@ public class PlayerController : MonoBehaviour
             return;
         if (!isGround)
             return;
-        if (isHited)
-            return;
+        //if (isHited)
+        //    return;
 
         Jump();
     }
@@ -104,19 +104,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Hit()
-    {
-        StartCoroutine(HitRoutine());
-    }
+    //public void Hit()
+    //{
+    //    StartCoroutine(HitRoutine());
+    //}
 
-    private IEnumerator HitRoutine()
-    {
-        StopCoroutine(moveRoutine);
-        animator.SetBool("IsHit", true);
-        isHited = true;
-        yield return new WaitForSeconds(1f);
-        animator.SetBool("IsHit", false);
-        isHited = false;
-        moveRoutine = StartCoroutine(MoveRoutine());
-    }
+    //private IEnumerator HitRoutine()
+    //{
+    //    StopCoroutine(moveRoutine);
+    //    animator.SetBool("IsHit", true);
+    //    isHited = true;
+    //    yield return new WaitForSeconds(1f);
+    //    animator.SetBool("IsHit", false);
+    //    isHited = false;
+    //    moveRoutine = StartCoroutine(MoveRoutine());
+    //}
 }
