@@ -9,7 +9,7 @@ public class Monster : MonoBehaviour
     protected new Collider2D collider;
     protected new SpriteRenderer renderer;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
